@@ -597,22 +597,63 @@
 // const macBookPrice = 3900
 // const mainProfileImage = profile.image[0]; // url1
 
-const registerInput = {
-  email: 'a@mail.com',
-  password: '123456',
-  firstName: 'john',
-  birthDate: new Date('2000-09-03')
-};
+// const registerInput = {
+//   email: 'a@mail.com',
+//   password: '123456',
+//   firstName: 'john',
+//   birthDate: new Date('2000-09-03')
+// };
 
-// const { password, email, ...value } = registerInput;
-// // value ==> {  firstName: 'john', birthDate: new Date('2000-09-03')}
-// console.log(value);
+// // const { password, email, ...value } = registerInput;
+// // // value ==> {  firstName: 'john', birthDate: new Date('2000-09-03')}
+// // console.log(value);
 
-const { gender: sex = 'unknown' } = registerInput;
+// const { gender: sex = 'unknown' } = registerInput;
 
-function test({ name, age }) {
-  console.log(name);
-  console.log(age);
+// function test({ name, age }) {
+//   console.log(name);
+//   console.log(age);
+// }
+
+// test({ name: 'jack', age: 32 });
+
+// const obj = {};
+// console.log(obj);
+// const r = obj.toString();
+// console.log(r);
+
+// Array.prototype.xxx = function () {
+//   console.log('Array protoype');
+// };
+
+// Object.prototype.xxx = function () {
+//   console.log('Object protottype');
+// };
+
+// const arr = [3, 5];
+// console.log(arr);
+// const r = arr.valueOf();
+// console.log(r);
+// arr.length
+// arr.xxxxccccccccccccccccccccccccccc();
+
+// const d = new Date();
+// console.dir(d);
+
+// const a = 'Hello';
+// a.toLowerCase();
+
+// const a = new Set() // set property [[Prototype]] ==> Set
+
+function test(a, b) {
+  console.log(this);
+  console.log(a);
+  console.log(b);
 }
 
-test({ name: 'jack', age: 32 });
+const bindWith200 = test.bind(200); // function ( b) { console.log(200); console.log('aaa');   console.log(b); }
+// test.call(500, 'aaaaaaaaaaaaaaaaaaa', 'hello'); // test('aaaaaaaaaaaaaaaaaaa'); this ==> 500
+test.apply('welcome', [1, 200]);
+
+// window.test();
+// bindWith200('1111111111111', 'skjsjsjs');
